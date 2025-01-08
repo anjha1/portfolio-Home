@@ -134,46 +134,13 @@
             When I'm not immersed in data or code, you can find me on the cricket field or engrossed in the pages of a captivating book. My ultimate goal is to secure a position in a respected company where I can contribute meaningfully and further my professional growth.
         </p>
         <p>
-            <a href="https://sites.google.com/view/achhuta-nand-jha/my-activity" class="contact-button">My Activity</a>
-            <a href="http://wa.me/918439131459" class="contact-button">WhatsApp Me</a>
+        <a href="https://sites.google.com/view/achhuta-nand-jha/my-activity" class="contact-button">My Activity</a>
+        <a href="http://wa.me/918439131459" class="contact-button">WhatsApp Me</a>
         </p>
-        <!-- Display Page View Count -->
-        <p id="page-view-count" style="font-weight: bold; color: #007bff;">Loading page views...</p>
     </section>
 
     <footer>
         <p>&copy; 2025 Achhuta Nand Jha. All rights reserved.</p>
     </footer>
-
-    <!-- JavaScript for Page View Tracking -->
-    <script>
-        // Function to check if the user is new
-        function isNewUser() {
-            const hasVisited = localStorage.getItem('hasVisited');
-            if (!hasVisited) {
-                localStorage.setItem('hasVisited', 'true');
-                return true; // New user
-            }
-            return false; // Returning user
-        }
-
-        // Function to update page view count
-        function updatePageViewCount() {
-            // Retrieve the current page view count from localStorage
-            let pageViews = parseInt(localStorage.getItem('pageViews')) || 0;
-
-            // Check if the user is new
-            if (isNewUser()) {
-                pageViews += 1; // Increment the count for new users
-                localStorage.setItem('pageViews', pageViews); // Save the updated count
-            }
-
-            // Display the page view count
-            document.getElementById('page-view-count').textContent = `Total Unique Views: ${pageViews}`;
-        }
-
-        // Call the function when the page loads
-        updatePageViewCount();
-    </script>
 </body>
 </html>
