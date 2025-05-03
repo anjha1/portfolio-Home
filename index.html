@@ -107,25 +107,97 @@
         footer p {
             margin: 0;
         }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                display: none;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                text-align: center;
+                padding: 10px;
+                background-color: #333;
+                border-radius: 5px;
+            }
+
+            .hamburger {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                cursor: pointer;
+                color: white;
+                font-size: 1.5rem;
+            }
+
+            .about-section {
+                margin: 20px auto;
+                padding: 20px;
+                width: 90%;
+            }
+
+            footer {
+                position: relative;
+                margin-top: 40px;
+            }
+
+            .contact-button {
+                display: block;
+                margin: 10px auto;
+                text-align: center;
+                width: 80%;
+            }
+
+            img[src="a1.jpg"] {
+                width: 120px;
+                height: 120px;
+            }
+
+            /* Adjust hitwebcounter image */
+            .hitwebcounter img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        /* Desktop styles */
+        @media (min-width: 769px) {
+            .hamburger {
+                display: none;
+            }
+        }
         
     </style>
 </head>
 <body>
     <header>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
         <h1>About Me</h1>
         <!-- hitwebcounter Code START -->
-<a href="https://www.hitwebcounter.com" target="_blank">
-    <img src="https://hitwebcounter.com/counter/counter.php?page=19934730&style=0005&nbdigits=9&type=ip&initCount=1000" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>                                    
-                                        
-                                            
-                                              
-                                
+        <div class="hitwebcounter">
+            <a href="https://www.hitwebcounter.com" target="_blank">
+                <img src="https://hitwebcounter.com/counter/counter.php?page=19934730&style=0005&nbdigits=9&type=ip&initCount=1000" 
+                     title="Counter Widget" 
+                     alt="Visit counter For Websites" 
+                     border="0" />
+            </a>
+        </div>
+        
         <nav>
             <ul>
                 <li><a href="https://anjha1.github.io/portfolio-Projects/">Projects</a></li>
                 <li><a href="https://anjha1.github.io/portfolio-Experience/">Experience</a></li>
                 <li><a href="https://anjha1.github.io/portfolio-Contact/">Contact</a></li>
-                 <li><a href="https://anjha1.github.io/portfolio-Professional-Certifications/">Certification</a></li>
+                <li><a href="https://anjha1.github.io/portfolio-Professional-Certifications/">Certification</a></li>
             </ul>
         </nav>
     </header>
@@ -147,6 +219,21 @@
         <a href="http://wa.me/918439131459" class="contact-button">WhatsApp Me</a>
         <a href="https://anjha1.github.io/Anjha-3D-Resume/" target="_blank"  class="contact-button">My Resume</a>
         </p>
+        <script>
+            function toggleMenu() {
+                const navUl = document.querySelector('nav ul');
+                navUl.classList.toggle('active');
+            }
+    
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const navUl = document.querySelector('nav ul');
+                const hamburger = document.querySelector('.hamburger');
+                if (!event.target.closest('nav') && !event.target.closest('.hamburger')) {
+                    navUl.classList.remove('active');
+                }
+            });
+        </script>
         
         <script>
             window.watsonAssistantChatOptions = {
